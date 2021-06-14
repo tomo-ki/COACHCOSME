@@ -1,0 +1,233 @@
+$aqua : #55bbbb;
+$pink : hsl(339, 100%, 63%);
+
+html{
+  width: 1300px;
+  display: flex;
+  justify-content: center;
+}
+
+body{
+  font-family: 'Shippori Mincho', serif;
+  font-style: normal;
+  width: 1000px;
+}
+
+.logo{
+  font-family: 'Amatic SC', cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.flex{
+  display: flex;
+  &-column{
+    display: flex;
+  flex-direction: column;
+  }
+}
+
+
+@mixin buttonStyle($b-color, $f-color: white, $width:35%) {
+  height: 50px;
+  line-height: 50px;
+  width: $width;
+  color: $f-color;
+  border-radius: 30px;
+  border: none;
+  background-color: $b-color;
+  font-size: 16px;
+  box-shadow: 0 0 10px $pink;
+}
+
+
+
+.header {
+  height: 70px;
+  justify-content: flex-end;
+  background-color: white;
+  &__logo{
+    font-size: 40px;
+    line-height: 70px;
+    color: $aqua;
+    margin-right: 50px;
+  }
+}
+
+// firstview
+.firstview{
+  background: url(./images/fv.png) no-repeat;
+  background-size: cover;
+  background-color: white;
+  padding: 40px;
+  &__heading{
+    font-size: 40px;
+  }
+  &__big{
+    &-aqua{
+      font-size: 64px;
+      color: $aqua;
+    }
+    &-black{
+      color: black;
+      font-size: 64px;
+    }
+  }
+  &__discount{
+    margin: 20px 0;
+    align-items: center;
+    &-circle{
+      background-color: $pink;
+      align-items: center;
+      justify-content: center;
+      $edge: 60px;
+      width: $edge;
+      height: $edge;
+      border-radius: $edge;
+      &--text{
+        color: white;
+      }
+    }
+    &-textarea{
+      margin-left: 15px;
+      &--title{
+        font-size: 12px;
+        color: $aqua;
+      }
+      &--fee{
+        color: $pink;
+        line-height: 30px;
+        span{
+          font-size: 40px;
+        }
+      }
+    }
+  }
+  &__button{
+    @include buttonStyle($b-color: $pink);
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+// trouble
+.troubles{
+  background-color: white;
+  &__title{
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    position: relative;
+    background-color: $aqua;
+    padding: 15px 0;
+    span{
+      font-size: 36px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -15px;
+      border: 30px solid transparent;
+      border-top: 25px solid $aqua;
+    }
+  }
+  &__listsarea {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &-img{
+      position: absolute;
+      bottom: 0;
+      left: 20%;
+      width: 15%;
+    }
+    &-listwrapper{
+      border: 1px solid $aqua;
+      border-radius: 20px;
+      padding: 10px;
+      margin: 50px 0;
+      margin-left: 25%;
+    }
+    &-list{
+      border-bottom: solid 1px $aqua;
+      margin: 20px;
+      color: $aqua;
+      font-size: 16px;
+      &--text{
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+// solutions
+.solutions{
+  background-color: white;
+  align-items: center;
+  &__title{
+    width: 100%;
+    align-items: center;
+    background-color: $aqua;
+    text-align: center;
+    color: white;
+    padding: 30px;
+    font-size: 14px;
+    &-text{
+      line-height: 45px;
+      &--big{
+        font-size: 32px;
+        &pink{
+          font-size: 32px;
+          color: $pink;
+        }
+      }
+    }
+  }
+  &__cardwrapper{
+    padding: 50px 0;
+    width: 80%;
+    justify-content: space-between;
+  }
+  &__card{
+    width: 32%;
+    border: solid 1px $aqua;
+    padding: 20px 10px;
+    position: relative;
+    &-heading{
+      position: absolute;
+      color: $aqua;
+      top: 0;
+      left: 5%;
+      padding: 0 5px;
+      transform: translateY(-50%);
+      background-color: white;
+    }
+    &-title{
+      &--pink{
+        color: $pink;
+      }
+    }
+    &-desc{
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  }
+}
+
+// footer
+.footer{
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  background-color: white;
+}
